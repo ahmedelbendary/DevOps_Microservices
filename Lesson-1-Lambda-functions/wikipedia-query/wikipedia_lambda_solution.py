@@ -16,7 +16,7 @@ def lambda_handler(event, context):
         body = json.loads(event["body"])
     
     # get the wikipedia "entity" from the body of the request
-    entity = body["entity"]
+    entity = event["entity"]
     res = wikipedia.summary(entity, sentences=1) # first sentence, result
 
     # print statements
